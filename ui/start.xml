@@ -12,7 +12,7 @@
 			<!-- Splash Screen -->
 			<WINDOW id="splashScreen" layout="0,0,320,460"  defaultImg="#ffffff" >
 				<WINDOW layout="0,0,320,200" align="linear:center" >
-					<LABEL id="title" themeId="title" layout="auto,auto" text="mulawear"  visible="invisible"/>
+					<LABEL id="title" themeId="title" layout="auto,auto" text="Five O'Clock"  visible="invisible"/>
 				</WINDOW>
 				<WINDOW layout="0,320,320,100" align="linear:center" >
 					<LABEL id="loading" themeId="loading" layout="auto,auto" text="loading..."  visible="invisible"/>

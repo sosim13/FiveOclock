@@ -21,44 +21,7 @@
 
 	<UI>
 		<UILAYOUT portrait="320,460" landscape="320,460" theme="themeMenu">
-			<!-- 왼쪽 메뉴 -->
-			<WINDOW id="id_leftMenu" layout="0,-50,120,560" defaultImg="#ffffff" onFlickLeft="{userVariable.menuView == '0'?function.slide:''}">
-				<!-- 접힘 효과가 잘보이게 하기 위해 위아래로 검정색 영역을 놓는다. -->
-				<WINDOW layout="0,0,120,50" defaultImg="#000000"/>
-				<WINDOW layout="0,510,120,50" defaultImg="#000000"/>
-				<WINDOW layout="0,50,120,460" align="linear:vertical" defaultImg="#ffffff">
-					<WINDOW layout="120,20"/>
 
-					<!-- 메뉴 상단 로고 -->
-					<!--
-						<LABEL layout="140,40" defaultImg="leftMenuTop.png" align="linear:vertical|center">
-						<IMAGE layout="130,30" defaultImg="http://mulawear.com/design/jo112/mula/logo.jpg"/>
-						</LABEL>
-					-->
-
-
-					<LABEL themeId="smallTitle" text="Main menus"/>
-
-					<STYLEBUTTON themeId="thLeftButton" text="첫페이지로" onClick="function.navigation('http://mulawear.com/m/main.html')"/>
-
-					<STYLEBUTTON themeId="thLeftButton" text="카테고리" onClick="function.navigation('http://mulawear.com/m/category.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="장바구니" onClick="function.navigation('http://mulawear.com/m/basket.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="마이페이지" onClick="function.navigation('http://mulawear.com/m/mypage.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="로그인" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="갤러리" onClick="function.gallery"/>
-					<STYLEBUTTON themeId="thLeftButton" text="블로그 검색" onClick="function.navigation('http://m.search.naver.com/search.naver?where=m_blog&amp;sm=mtb_jum&amp;query=mulawear')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="종료" onClick="application.terminate"/>
-
-					<LABEL themeId="smallTitle" text="Develover menus"/>
-
-					<STYLEBUTTON themeId="thLeftButton" text="주문정보 자동입력" onClick="function.fillOrderInfo"/>
-					<STYLEBUTTON themeId="thLeftButton" text="html 소스 보기" onClick="function.viewSource"/>
-					<STYLEBUTTON themeId="thLeftButton" text="웹브라우저로 보기" onClick="function.viewWebBrowser"/>
-					<STYLEBUTTON themeId="thLeftButton" text="실시간 상담" onClick="function.chat"/>
-					<STYLEBUTTON themeId="thLeftButton" text="test" onClick="function.test"/>
-
-				</WINDOW>
-			</WINDOW>
 			<WINDOW id="id_leftMenuOverlay1" layout="0,-50,61,560" visible="invisible"/>
 			<WINDOW id="id_leftMenuOverlay2" layout="60,-50,61,560" visible="invisible"/>
 			<WINDOW id="id_rightArea" layout="0,0,320,460" defaultImg="#E5E5E5" onClick="'none'">
@@ -73,44 +36,8 @@
 					</WINDOW>
 				-->
 			</WINDOW>
-			<CONTAINER id="galleryPopup" layout="0,30,320,390" visible="invisible"/>
-			<WINDOW layout="0,0,320,30" defaultImg="#a0ffffff">
-				<IMAGE layout="120,5,80,20" defaultImg="logo.png"/>
-				<STYLEBUTTON layout="5,5,50,20" themeId="titleBarBtn" text="뒤로" onClick="function.back"/>
-				<STYLEBUTTON layout="265,5,50,20" themeId="titleBarBtn" text="로그인" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
-			</WINDOW>
-			<WINDOW layout="0,30,320,1px" defaultImg="#30a0a0a0"/>
 
-			<WINDOW id="toolbar" layout="0,420,320,40">
-				<WINDOW layout="0,0,320,60" align="linear:hFill">
-					<STYLEBUTTON themeId="toolBtn" overlay2="color:#ffffff|shape=house" padding2="20,5,20,15" overlay3="color:#b0b0b0|shape=square" padding3="25,15,25,20" onClick="function.navigation('http://mulawear.com/m/main.html')">
-						<LABEL themeId="toolText" text="홈"/>
-					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="■■" onClick="function.gallery">
-						<LABEL themeId="toolText" text="갤러리"/>
-					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="▣" onClick="function.navigation('http://mulawear.com/m/basket.html')">
-						<LABEL themeId="toolText" text="장바구니"/>
-					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="★" onClick="function.navigation('http://mulawear.com/m/mypage.html')">
-						<LABEL themeId="toolText" text="마이페이지"/>
-					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="..." onClick="function.slide">
-						<LABEL themeId="toolText" text="기타 메뉴"/>
-					</STYLEBUTTON>
-				</WINDOW>
-
-				<!--
-					<WINDOW layout="290,0,30,40" onClick="function.toggleToolbar">
-					<STYLEBUTTON layout="0,0,20,40" shape="roundRect(2,4,4,2)" borderStyle="solid:1|#334477" defaultImg="#00000000" padding="0,0,0,0" fontSize="20" overlay1="gradation:tb|#d0bbbbff|#e77777aa|#ff333366" overlay2="color:#ffffff|shape=rightTriangle" padding2="5,15,5,15" onClick="function.toggleToolbar"/>
-					</WINDOW>
-				-->
-			</WINDOW>
-
-			<!-- Sidemenu 접기 펼치기 왼쪽 하단 버튼 -->
-			<!--
-				<STYLEBUTTON layout="0,420,40,40" shape="circle" borderStyle="emboss" _text="≡" defaultImg="#a0aaaaff" padding="0,0,0,0" fontSize="20" onClick="function.slide" overlay1="color:#5a0d5f|shape=polygon(10,10,90,10,90,30,10,30,10,40,90,40,90,60,10,60,10,70,90,70,90,90,10,90,10,10)" padding1="8,10,8,10"/>
-			-->
+			
 			
 		</UILAYOUT>
 	</UI>
