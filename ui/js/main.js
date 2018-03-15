@@ -1,5 +1,5 @@
 
-?function hideElement(id)
+ï»¿function hideElement(id)
 {
 	var element = document.getElementById(id);
 
@@ -53,17 +53,17 @@ function getFileName(path)
 
 function addMomlFont(url) {
 	var fontUrl = agate.runScript("file.pathToUrl('" + url + "')");
-	var fontName = getFileName(url); // ÀüÃ¼ ÆÄÀÏ path Áß¿¡ ÆÄÀÏ¸í¸¸ ±Û²Ã ÀÌ¸§À¸·Î »ç¿ëÇÏµµ·Ï ÇÑ´Ù.
+	var fontName = getFileName(url); // ì „ì²´ íŒŒì¼ path ì¤‘ì— íŒŒì¼ëª…ë§Œ ê¸€ê¼´ ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©í•˜ë„ë¡ í•œë‹¤.
 	
 	cssAddFont(fontName, fontUrl);
 }
 
 
-// ÇÑ±ÛÀº word-wrap:break-word °¡ µ¿ÀÛÇÏÁö ¾Ê´Â´Ù. °¢ ´Ü¾î¸¦ div ÅÂ±×·Î ¹­¾î¼­ break-word Ã³·³ º¸ÀÌµµ·Ï ÇÑ´Ù.
+// í•œê¸€ì€ word-wrap:break-word ê°€ ë™ì‘í•˜ì§€ ì•ŠëŠ”ë‹¤. ê° ë‹¨ì–´ë¥¼ div íƒœê·¸ë¡œ ë¬¶ì–´ì„œ break-word ì²˜ëŸ¼ ë³´ì´ë„ë¡ í•œë‹¤.
 function makeKorWordWrapInnerHTML(element)
 {
 	var nonHTMLText = element.innerHTML;
-	if (nonHTMLText.indexOf("<div") < 0) { // <div ¸¦ Æ÷ÇÔÇÏ°í ÀÖÀ¸¸é ÀÌ¹Ì ÀÛ¾÷ÇÑ °ÍÀ¸·Î °£ÁÖÇÑ´Ù.
+	if (nonHTMLText.indexOf("<div") < 0) { // <div ë¥¼ í¬í•¨í•˜ê³  ìˆìœ¼ë©´ ì´ë¯¸ ì‘ì—…í•œ ê²ƒìœ¼ë¡œ ê°„ì£¼í•œë‹¤.
 		element.setAttribute("orgText", nonHTMLText);
   		var words = nonHTMLText.split(" ");
   		var text = "";
@@ -94,22 +94,6 @@ function adjustTextAlign()
 // enlarge image
 function enlargeImage()
 {
-	//setStatusText('loading.');
-  	var imgs=document.getElementsByTagName("img");
-
-	for (i = 0; i < imgs.length; ++i) {
-  		var img = imgs[i];
-			
-		img.style.width = "980px";
-//  		if (img.src.indexOf("/bbs/icon/") >= 0)
-//  			img.style.width = "71px";
-//		if (img.src.indexOf("/members/icon/") >= 0)
-//  			img.style.width = "100px";
-  	}
-}
-
-function enlargeImage2()
-{
   	var imgs=document.getElementsByTagName("img");
   	var totalWidth = document.getElementById("container").offsetWidth;
   	
@@ -135,7 +119,7 @@ function enlargeImage2()
                     //alert(img.style.width);
   			 		img.style.width = width + "px";
  		 			img.style.height = width + "px";
-                    //++ 2014-02-19 ¼­¹ö ÆäÀÌÁö º¯°æÀÌÈÄ  Android¿¡¼­´Â µÕ±Ù ¸ğ¼­¸® È¿°ú°¡ µ¿ÀÛÇÏÁö ¾ÊÀ½.
+                    //++ 2014-02-19 ì„œë²„ í˜ì´ì§€ ë³€ê²½ì´í›„  Androidì—ì„œëŠ” ë‘¥ê·¼ ëª¨ì„œë¦¬ íš¨ê³¼ê°€ ë™ì‘í•˜ì§€ ì•ŠìŒ.
  		 			img.style["border-radius"] =  (width / 10) + "px";
  		 			img.style["box-shadow"] = "2px 2px 5px rgba(110,110,135,0.5)";
  	  			}
@@ -143,3 +127,28 @@ function enlargeImage2()
   		}
   	}
 }
+// 2014/01/08 ì— ì„œë²„ í˜ì´ì§€ê°€ ë³€ê²½ë¨
+
+hideElementByClass('toggle-btn');
+css(".items-wrap h2", "background", "rgba(255, 255, 255, 0.01)");
+css(".items-wrap h2", "border", "none");
+
+
+// ê¸€ê¼´ ì¶”ê°€
+addMomlFont("/res/UnGraphicBold.ttf"); 
+addMomlFont("/res/QumpellkaNo12.otf"); 
+
+css("body", "font-family", "UnGraphicBold");
+css("dd.price", "font-family", "QumpellkaNo12");
+
+// ìƒí’ˆëª… ë¬¸ìì—´ ì •ë ¬ ë³€ê²½
+adjustTextAlign();
+
+   
+// ì´ë¯¸ì§€ í¬ê¸° ë³€ê²½
+enlargeImage();
+window.setTimeout(enlargeImage, 500); // ê°€ë” ì´ë¯¸ì§€ê°€ ë‚˜ì¤‘ì— ë³´ì—¬ì§€ë©´ì„œ ì•ˆì»¤ì§€ëŠ” ê²½ìš°ê°€ ìˆì–´ì„œ ì ë‹¹í•œ ì‹œê°„ ë’¤ì— ì¬ì‹¤í–‰í•˜ë„ë¡ í•¨.
+window.setTimeout(enlargeImage, 1000); // ê°€ë” ì´ë¯¸ì§€ê°€ ë‚˜ì¤‘ì— ë³´ì—¬ì§€ë©´ì„œ ì•ˆì»¤ì§€ëŠ” ê²½ìš°ê°€ ìˆì–´ì„œ ì ë‹¹í•œ ì‹œê°„ ë’¤ì— ì¬ì‹¤í–‰í•˜ë„ë¡ í•¨.
+
+
+  

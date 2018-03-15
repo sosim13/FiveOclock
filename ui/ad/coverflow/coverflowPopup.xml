@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML>
+	<FUNCTIONLIST>
+		<FUNCTION id="coverflowChange">
+			<FUNCTIONITEM cmd="userVariable.coverflowIndex = math.add(parameter.param[0],1)" />
+			<_FUNCTIONITEM cmd="coverflow_rank.text = userVariable.coverflowIndex"/>
+			<FUNCTIONITEM cmd="coverflow_title.text = xpath.evaluateEx('data', '/IMAGELIST/ITEM[' + userVariable.coverflowIndex + ']/@title')"/>
+			<_FUNCTIONITEM cmd="coverflow_title2.text = coverflow_title.text" />
+			<_FUNCTIONITEM cmd="coverflow_artist.text = xpath.evaluateEx('data', '/IMAGELIST/ITEM[' + userVariable.coverflowIndex + ']/@artist')"/>
+		</FUNCTION>
+	</FUNCTIONLIST>
+	
+	<DATASOURCELIST>
+		<DATASOURCE id="data" src="data.xml"/>
+	</DATASOURCELIST>
+    <UI>
+		<UILAYOUT portrait="300,300" landscape="300,300">
+			<!-- 
+			<COVERFLOW id="obj1" layout="50,50,100,100" text="PORTRAIT" defaultImg="#ff00ff"  />
+			<COVERFLOW id="obj2" layout="150,150,100,100" text="PORTRAIT" defaultImg="#ff00ff"  />
+			<WINDOW id="obj3" layout="50,150,50,50" text="PORTRAIT" defaultImg="#30ff00ff"  />
+			-->
+			<POPUP layout="0,0,300,300" defaultImg="#80808080" onClick="container.close">
+			<ACCELCOVERFLOW id="coverflow" layout="25,130,250,120" defaultImg="#00000000" zOrderTop="true" dataSource="data.xml" dataList="/IMAGELIST/ITEM" imagePath="./@src" titlePath="./@name" shadow="mirror" onChange="function.coverflowChange(caller.index)" index="0" />
+			<LABEL layout="20,250,260,20" fontSize="14" fontColor="#aaeeff" id="coverflow_title" fontShadow="#334433" textAlign="center" fontStyle="bold"/>
+
+			
+			</POPUP>
+		</UILAYOUT>
+
+    </UI>
+
+</MOML>
+
+

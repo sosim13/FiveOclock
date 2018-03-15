@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created by ApplusForm.com on 2013.8.6
+
+	Permission is granted to copy, distribute, modify under the terms of ApplusForm License.
+
+	Copyright (C) 2013 ApplusForm.com All rights reserved.
+-->
+<MOML version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+    
+    <THEMES id="themeMenu" >
+		<THEME id="thLabel2" layout="110,30"  fontSize="12" textAlign="left|vCenter" fontColor="#ffffff" margin="10,2,0,0"/>
+	</THEMES>
+   
+
+	<UI>
+		<UILAYOUT portrait="320,460" landscape="320,460" theme="themeMenu" >
+            <POPUP id="popup" layout="0,0,320,460" align="linear:vertical|bottom|center" onClick="container.close" visible="invisible" >
+               
+               <WINDOW defaultImg="#000000" >
+               			<WINDOW layout="120,1px" defaultImg="#ffffff" />
+					 	<LABEL themeId="thLabel2" text="첫페이지로" onClick="function.root.main.navigation('http://mulawear.com/m'),popup.visible='invisible'"/>
+               			<WINDOW layout="120,1px" defaultImg="#ffffff" />
+					 	<LABEL id="leftMenu" themeId="thLabel2" text="왼쪽 메뉴 열기" onClick="function.root.main.slide,popup.visible='invisible'"/>
+               			<WINDOW layout="120,1px" defaultImg="#ffffff" />
+					 	<LABEL themeId="thLabel2" text="페이지 새로 고침" onClick="root.main.webContainer.webView.refresh,popup.visible='invisible'"/>
+               			<WINDOW layout="120,1px" defaultImg="#ffffff" />
+					 	<LABEL themeId="thLabel2" text="프로그램 종료" onClick="application.terminate"/>
+               			<WINDOW layout="120,1px" defaultImg="#ffffff" />
+				</WINDOW>
+            </POPUP>
+         
+        </UILAYOUT>
+    </UI>
+ 
+	<FUNCTIONLIST>
+		<FUNCTION id="init(fold)">
+			<FUNCTIONITEM condition="userVariable.menuView" cmd="leftMenu.text='왼쪽 메뉴 열기'" elseCmd="leftMenu.text='왼쪽 메뉴 닫기'"/>
+			<FUNCTIONITEM cmd="popup.visible='visible'" />
+		</FUNCTION>
+	</FUNCTIONLIST>  
+</MOML>

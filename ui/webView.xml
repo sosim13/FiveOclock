@@ -1,39 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MOML>
-    <THEMES id="theme1">
-        <THEME id="title" fontSize="50" textColor="#000000" fontShadow="#80808080"/>
-        <THEME id="loading" fontSize="12" textColor="#000000" fontShadow="#80808080"/>
-    </THEMES>
-
-    <UI>
-        <UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
-            <WINDOW id="bg" layout="0,0,320,460">
-                <WINDOW id="slideBg" layout="0,0,640,460" defaultImg="bg1.jpg" />
-                <WINDOW id="fadeBg" layout="0,0,640,460" visible='invisible'/>
-                <WINDOW layout="0,0,320,460" defaultImg="#b0ffffff" />
-            </WINDOW>
-
-            <AGATEWEBVIEW id="webView" layout="0,30,320,390" src="http://sosim13p.cafe24.com/cloudinary/index.jsp" _src="main.htm" supportZoom="false" controls="none" defaultImg="#01ffffff" jsBridge="false">
-                <LINKMAP>
-                    <!-- main page urlÀ» ¸ðµÎ ½áÁØ´Ù.-->
-                    <LINK url="http://sosim13p.cafe24.com/cloudinary/index.jsp*" jsPlugin="js/main.js" delay="500"/>
-
-                    <!-- °øÅë -->
-                    <!-- <LINK url="http://nikemania.com/*" jsPlugin="js/common.js" delay="500"/> -->
+	<THEMES id="theme1">
+		<THEME id="title" fontSize="50" textColor="#000000" fontShadow="#80808080"/>
+		<THEME id="loading" fontSize="12" textColor="#000000" fontShadow="#80808080"/>
+	</THEMES>
+	
+	<UI>
+		<UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
+			<WINDOW id="bg" layout="0,0,320,460">
+				<WINDOW id="slideBg" layout="0,0,640,460" defaultImg="bg1.jpg" />
+				<WINDOW id="fadeBg" layout="0,0,640,460" visible='invisible'/>
+				<WINDOW layout="0,0,320,460" defaultImg="#b0ffffff" />
+			</WINDOW>
+			
+			<AGATEWEBVIEW id="webView" layout="0,30,320,390" src="http://sosim13p.cafe24.com/cloudinary/index.jsp" _src="main.htm" supportZoom="false" controls="none" defaultImg="#01ffffff">
+				<LINKMAP>
+					<!-- main page urlì„ ëª¨ë‘ ì¨ì¤€ë‹¤.-->
+					<LINK url="http://sosim13p.cafe24.com/cloudinary/index.jsp" jsPlugin="js/main.js" delay="500"/>
 					
-                    <!-- ÀÚµ¿·Î±×ÀÎ -->
-                    <!-- <LINK url="http://nikemania.com/m/m.php" jsPlugin="js/fillOrderInfo.js" delay="500"/> -->
-                    <!-- <LINK url="http://nikemania.com/m/m.php" onFinish="function.fillOrderInfo" delay="1000"/> -->
-                </LINKMAP>
-            </AGATEWEBVIEW>
-        </UILAYOUT>
-    </UI>
-
-    <FUNCTIONLIST>
-        <!-- Ã¹ À¥ÆäÀÌÁö¿¡¼­ °¶·¯¸® µ¥ÀÌÅÍ ¸¸µé±â ¾È¾¸-->
-        <FUNCTION id="makeGalleryData(url)" >
-            <FUNCTIONITEM condition="userVariable.galleryData == ''" cmd="caller.runJavaScript(file.read('gallery/makeImageData.js'))" />
-        </FUNCTION>
-    </FUNCTIONLIST>
+					<!-- ê³µí†µ -->
+					<LINK url="http://mulawear.com/m/*" jsPlugin="js/common.js" delay="500"/>
+				</LINKMAP>
+			</AGATEWEBVIEW>
+			
+			<WINDOW id="flyingObj1" defaultImg="flareBlue.png" layout="-80,200,20,20" />
+			<WINDOW id="flyingObj2" defaultImg="flareRed.png" layout="-80,300,10,10"/>
+			<WINDOW id="flyingObj3" defaultImg="flareGreen.png" layout="-80,400,15,15"/>
+		</UILAYOUT>
+	</UI>
+	
+	<FUNCTIONCALL cmd="function.aniFlyingObj" delay="5000"/>
+	<FUNCTIONCALL cmd="function.aniSlideBg" delay="3000"/>
+	
+	<FUNCTIONLIST>
+		<!-- ì²« ì›¹íŽ˜ì´ì§€ì—ì„œ ê°¤ëŸ¬ë¦¬ ë°ì´í„° ë§Œë“¤ê¸°-->
+		<FUNCTION id="makeGalleryData(url)" >
+			<FUNCTIONITEM condition="userVariable.galleryData == ''" cmd="caller.runJavaScript(file.read('gallery/makeImageData.js'))" />
+		</FUNCTION>
+		
+		 <!-- flare ì• ë‹ˆë©”ì´ì…˜-->
+		<FUNCTION id="aniFlyingObj">
+			<FUNCTIONITEM cmd="animation.flyIn('flyingObj1', 400,-200, 20, 20, 'easeIn3', 3000, '')" delay="0"/>
+			<FUNCTIONITEM cmd="animation.flyIn('flyingObj2', 400,-200, 40, 40, 'easeIn3', 2000, '')" delay="400"/>
+			<FUNCTIONITEM cmd="animation.flyIn('flyingObj3', 400,-200, 20, 20, 'easeIn3', 1500, '')" delay="0"/>
+			<_FUNCTIONITEM cmd="animation.rotate('flyingObj1',720, 50, 50, 'easeIn3', 3000, '')" delay="0"/>
+			<_FUNCTIONITEM cmd="animation.rotate('flyingObj2',360, 15, 15, '', 2000, '')" delay="400"/>
+			<_FUNCTIONITEM cmd="animation.rotate('flyingObj3',540, 20, 20, '', 1500, '')" delay="0"/>
+			<FUNCTIONITEM cmd="function.aniFlyingObj" delay="15000"/>
+		</FUNCTION>
+		
+		<!-- ë°°ê²½  ì• ë‹ˆë©”ì´ì…˜ -->		
+		<FUNCTION id="aniSlideBg" >
+			<FUNCTIONITEM cmd="animation.flyOut('slideBg', -320,0, 640, 460, 'roundTrip|easeInOut3', 50000, 'slideBg.visible=\'visible\', function.switchBg')" delay="0"/>
+		</FUNCTION>
+		<FUNCTION id="switchBg" >
+			<FUNCTIONITEM cmd="userVariable.switchBgIndex= (userVariable.switchBgIndex + 1) % 3" />
+			<FUNCTIONITEM cmd="fadeBg.defaultImg='bg' + (userVariable.switchBgIndex + 1) + '.jpg'" />
+			<FUNCTIONITEM cmd="animation.show('fadeBg', 'fade', 'easeOut3', 3000, '')"/>
+			<FUNCTIONITEM cmd="slideBg.defaultImg=fadeBg.defaultImg" delay="3100"/>
+			<FUNCTIONITEM cmd="fadeBg.visible='invisible'" delay="3200"/>
+			<FUNCTIONITEM cmd="function.aniSlideBg" delay="3300"/>
+		</FUNCTION>
+		
+		<!-- html ì†ŒìŠ¤ ë³´ê¸° ë©”ë‰´ -->
+		<FUNCTION id="popupSource(url)" >
+			<FUNCTIONITEM cmd="userVariable.source=url" />
+			<FUNCTIONITEM cmd="userVariable.sourceFilePath = webView.url" />
+			<FUNCTIONITEM cmd="root.open('source.xml', 'popupSource')" />
+		</FUNCTION>
+		
+	</FUNCTIONLIST>
 
 </MOML>

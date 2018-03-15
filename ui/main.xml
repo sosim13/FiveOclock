@@ -21,15 +21,15 @@
 
 	<UI>
 		<UILAYOUT portrait="320,460" landscape="320,460" theme="themeMenu">
-			<!-- ¿ÞÂÊ ¸Þ´º -->
+			<!-- ì™¼ìª½ ë©”ë‰´ -->
 			<WINDOW id="id_leftMenu" layout="0,-50,120,560" defaultImg="#ffffff" onFlickLeft="{userVariable.menuView == '0'?function.slide:''}">
-				<!-- Á¢Èû È¿°ú°¡ Àßº¸ÀÌ°Ô ÇÏ±â À§ÇØ À§¾Æ·¡·Î °ËÁ¤»ö ¿µ¿ªÀ» ³õ´Â´Ù. -->
+				<!-- ì ‘íž˜ íš¨ê³¼ê°€ ìž˜ë³´ì´ê²Œ í•˜ê¸° ìœ„í•´ ìœ„ì•„ëž˜ë¡œ ê²€ì •ìƒ‰ ì˜ì—­ì„ ë†“ëŠ”ë‹¤. -->
 				<WINDOW layout="0,0,120,50" defaultImg="#000000"/>
 				<WINDOW layout="0,510,120,50" defaultImg="#000000"/>
 				<WINDOW layout="0,50,120,460" align="linear:vertical" defaultImg="#ffffff">
 					<WINDOW layout="120,20"/>
 
-					<!-- ¸Þ´º »ó´Ü ·Î°í -->
+					<!-- ë©”ë‰´ ìƒë‹¨ ë¡œê³  -->
 					<!--
 						<LABEL layout="140,40" defaultImg="leftMenuTop.png" align="linear:vertical|center">
 						<IMAGE layout="130,30" defaultImg="http://mulawear.com/design/jo112/mula/logo.jpg"/>
@@ -39,22 +39,22 @@
 
 					<LABEL themeId="smallTitle" text="Main menus"/>
 
-					<STYLEBUTTON themeId="thLeftButton" text="Ã¹ÆäÀÌÁö·Î" onClick="function.navigation('http://mulawear.com/m/main.html')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì²«íŽ˜ì´ì§€ë¡œ" onClick="function.navigation('http://mulawear.com/m/main.html')"/>
 
-					<STYLEBUTTON themeId="thLeftButton" text="Ä«Å×°í¸®" onClick="function.navigation('http://mulawear.com/m/category.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="Àå¹Ù±¸´Ï" onClick="function.navigation('http://mulawear.com/m/basket.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="¸¶ÀÌÆäÀÌÁö" onClick="function.navigation('http://mulawear.com/m/mypage.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="·Î±×ÀÎ" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="°¶·¯¸®" onClick="function.gallery"/>
-					<STYLEBUTTON themeId="thLeftButton" text="ºí·Î±× °Ë»ö" onClick="function.navigation('http://m.search.naver.com/search.naver?where=m_blog&amp;sm=mtb_jum&amp;query=mulawear')"/>
-					<STYLEBUTTON themeId="thLeftButton" text="Á¾·á" onClick="application.terminate"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì¹´í…Œê³ ë¦¬" onClick="function.navigation('http://mulawear.com/m/category.html')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ìž¥ë°”êµ¬ë‹ˆ" onClick="function.navigation('http://mulawear.com/m/basket.html')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ë§ˆì´íŽ˜ì´ì§€" onClick="function.navigation('http://mulawear.com/m/mypage.html')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ë¡œê·¸ì¸" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ê°¤ëŸ¬ë¦¬" onClick="function.gallery"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ë¸”ë¡œê·¸ ê²€ìƒ‰" onClick="function.navigation('http://m.search.naver.com/search.naver?where=m_blog&amp;sm=mtb_jum&amp;query=mulawear')"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì¢…ë£Œ" onClick="application.terminate"/>
 
 					<LABEL themeId="smallTitle" text="Develover menus"/>
 
-					<STYLEBUTTON themeId="thLeftButton" text="ÁÖ¹®Á¤º¸ ÀÚµ¿ÀÔ·Â" onClick="function.fillOrderInfo"/>
-					<STYLEBUTTON themeId="thLeftButton" text="html ¼Ò½º º¸±â" onClick="function.viewSource"/>
-					<STYLEBUTTON themeId="thLeftButton" text="À¥ºê¶ó¿ìÀú·Î º¸±â" onClick="function.viewWebBrowser"/>
-					<STYLEBUTTON themeId="thLeftButton" text="½Ç½Ã°£ »ó´ã" onClick="function.chat"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì£¼ë¬¸ì •ë³´ ìžë™ìž…ë ¥" onClick="function.fillOrderInfo"/>
+					<STYLEBUTTON themeId="thLeftButton" text="html ì†ŒìŠ¤ ë³´ê¸°" onClick="function.viewSource"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì›¹ë¸Œë¼ìš°ì €ë¡œ ë³´ê¸°" onClick="function.viewWebBrowser"/>
+					<STYLEBUTTON themeId="thLeftButton" text="ì‹¤ì‹œê°„ ìƒë‹´" onClick="function.chat"/>
 					<STYLEBUTTON themeId="thLeftButton" text="test" onClick="function.test"/>
 
 				</WINDOW>
@@ -64,39 +64,39 @@
 			<WINDOW id="id_rightArea" layout="0,0,320,460" defaultImg="#E5E5E5" onClick="'none'">
 				<CONTAINER id="webContainer" layout="0,0,320,460" src="webView.xml"/>
 
-				<!-- Sidemenu Á¢±â ÆîÄ¡±â gripper -->
+				<!-- Sidemenu ì ‘ê¸° íŽ¼ì¹˜ê¸° gripper -->
 				<!--
 					<WINDOW id="gripper" layout="0,200,20,80" visible="invisible">
-					<BUTTON layout="0,0,20,20" defaultImg="#80aaffaa" text="¡ã" padding="0,0,0,0"/>
+					<BUTTON layout="0,0,20,20" defaultImg="#80aaffaa" text="â–²" padding="0,0,0,0"/>
 					<BUTTON layout="0,20,20,40" defaultImg="#80aaaaff" text="||" padding="0,0,0,0" onClick="function.slide"/>
-					<BUTTON layout="0,60,20,20" defaultImg="#80aaffaa" text="¡å" padding="0,0,0,0"/>
+					<BUTTON layout="0,60,20,20" defaultImg="#80aaffaa" text="â–¼" padding="0,0,0,0"/>
 					</WINDOW>
 				-->
 			</WINDOW>
 			<CONTAINER id="galleryPopup" layout="0,30,320,390" visible="invisible"/>
 			<WINDOW layout="0,0,320,30" defaultImg="#a0ffffff">
 				<IMAGE layout="120,5,80,20" defaultImg="logo.png"/>
-				<STYLEBUTTON layout="5,5,50,20" themeId="titleBarBtn" text="µÚ·Î" onClick="function.back"/>
-				<STYLEBUTTON layout="265,5,50,20" themeId="titleBarBtn" text="·Î±×ÀÎ" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
+				<STYLEBUTTON layout="5,5,50,20" themeId="titleBarBtn" text="ë’¤ë¡œ" onClick="function.back"/>
+				<STYLEBUTTON layout="265,5,50,20" themeId="titleBarBtn" text="ë¡œê·¸ì¸" onClick="function.navigation('http://mulawear.com/m/login.html')"/>
 			</WINDOW>
 			<WINDOW layout="0,30,320,1px" defaultImg="#30a0a0a0"/>
 
 			<WINDOW id="toolbar" layout="0,420,320,40">
 				<WINDOW layout="0,0,320,60" align="linear:hFill">
 					<STYLEBUTTON themeId="toolBtn" overlay2="color:#ffffff|shape=house" padding2="20,5,20,15" overlay3="color:#b0b0b0|shape=square" padding3="25,15,25,20" onClick="function.navigation('http://mulawear.com/m/main.html')">
-						<LABEL themeId="toolText" text="È¨"/>
+						<LABEL themeId="toolText" text="í™ˆ"/>
 					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="¡á¡á" onClick="function.gallery">
-						<LABEL themeId="toolText" text="°¶·¯¸®"/>
+					<STYLEBUTTON themeId="toolBtn" text="â– â– " onClick="function.gallery">
+						<LABEL themeId="toolText" text="ê°¤ëŸ¬ë¦¬"/>
 					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="¢Ã" onClick="function.navigation('http://mulawear.com/m/basket.html')">
-						<LABEL themeId="toolText" text="Àå¹Ù±¸´Ï"/>
+					<STYLEBUTTON themeId="toolBtn" text="â–£" onClick="function.navigation('http://mulawear.com/m/basket.html')">
+						<LABEL themeId="toolText" text="ìž¥ë°”êµ¬ë‹ˆ"/>
 					</STYLEBUTTON>
-					<STYLEBUTTON themeId="toolBtn" text="¡Ú" onClick="function.navigation('http://mulawear.com/m/mypage.html')">
-						<LABEL themeId="toolText" text="¸¶ÀÌÆäÀÌÁö"/>
+					<STYLEBUTTON themeId="toolBtn" text="â˜…" onClick="function.navigation('http://mulawear.com/m/mypage.html')">
+						<LABEL themeId="toolText" text="ë§ˆì´íŽ˜ì´ì§€"/>
 					</STYLEBUTTON>
 					<STYLEBUTTON themeId="toolBtn" text="..." onClick="function.slide">
-						<LABEL themeId="toolText" text="±âÅ¸ ¸Þ´º"/>
+						<LABEL themeId="toolText" text="ê¸°íƒ€ ë©”ë‰´"/>
 					</STYLEBUTTON>
 				</WINDOW>
 
@@ -107,15 +107,15 @@
 				-->
 			</WINDOW>
 
-			<!-- Sidemenu Á¢±â ÆîÄ¡±â ¿ÞÂÊ ÇÏ´Ü ¹öÆ° -->
+			<!-- Sidemenu ì ‘ê¸° íŽ¼ì¹˜ê¸° ì™¼ìª½ í•˜ë‹¨ ë²„íŠ¼ -->
 			<!--
-				<STYLEBUTTON layout="0,420,40,40" shape="circle" borderStyle="emboss" _text="¡Õ" defaultImg="#a0aaaaff" padding="0,0,0,0" fontSize="20" onClick="function.slide" overlay1="color:#5a0d5f|shape=polygon(10,10,90,10,90,30,10,30,10,40,90,40,90,60,10,60,10,70,90,70,90,90,10,90,10,10)" padding1="8,10,8,10"/>
+				<STYLEBUTTON layout="0,420,40,40" shape="circle" borderStyle="emboss" _text="â‰¡" defaultImg="#a0aaaaff" padding="0,0,0,0" fontSize="20" onClick="function.slide" overlay1="color:#5a0d5f|shape=polygon(10,10,90,10,90,30,10,30,10,40,90,40,90,60,10,60,10,70,90,70,90,90,10,90,10,10)" padding1="8,10,8,10"/>
 			-->
 			
 		</UILAYOUT>
 	</UI>
 
-	<!-- ÃÊ±âÈ­ °ªµé -->
+	<!-- ì´ˆê¸°í™” ê°’ë“¤ -->
 	<FUNCTIONCALL condition="id_rightArea.left == 140" cmd="userVariable.menuView='0'" elseCmd="userVariable.menuView='1'"/>
 	<FUNCTIONCALL cmd="userVariable.slideAnimationEnd = 'true'"/>
 

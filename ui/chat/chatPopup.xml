@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created by ApplusForm.com on 2013.8.6
+
+	Permission is granted to copy, distribute, modify under the terms of ApplusForm License.
+
+	Copyright (C) 2013 ApplusForm.com All rights reserved.
+-->
+<MOML version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+    
+    <THEMES id="themeMenu" >
+		<THEME id="thLabel2" layout="110,30"  fontSize="12" textAlign="left|vCenter" fontColor="#ffffff" margin="10,2,0,0"/>
+	</THEMES>
+   
+
+	<UI>
+		<UILAYOUT portrait="320,460" landscape="320,460" theme="themeMenu" >
+		<POPUP layout="0,0,320,460" defaultImg="#ffffff">
+			<AGATEWEBVIEW id="webView" layout="0,0,320,260" _src="main.htm" supportZoom="false" controls="none">
+			</AGATEWEBVIEW>
+               
+            
+            <WINDOW layout="0,260,320,200" align="linear:vertical">
+            <LABEL text="부재중인 경우 답변이 늦어질 수 있습니다."/>
+            <LABEL text="영업 시간 : 10:00 AM ~ 7:00 PM"/>
+            <LABEL text="점심 시간 : 12:00 PM ~ 1:00 PM"/>
+            </WINDOW>
+         </POPUP>
+        </UILAYOUT>
+    </UI>
+    
+    <FUNCTIONCALL cmd="webView.setHtml(file.read('zopim.htm'), 'http://mulawear.com')" />
+	 
+</MOML>

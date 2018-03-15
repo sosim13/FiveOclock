@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MOML>
+	<FUNCTIONCALL cmd="userVariable.popupUrl = 'embed:/coverflow/coverflowPopup.xml'" />
+	<FUNCTIONLIST>
+		<FUNCTION id="text">
+			<FUNCTIONITEM cmd="animation.show('lb1', 'fade', '', 300, '')" delay="0"/>
+			<FUNCTIONITEM cmd="animation.show('lb2', 'fade', '', 300, '')" delay="300"/>
+			<FUNCTIONITEM cmd="animation.show('lb3', 'fade', '', 300, '')" delay="600"/>
+			<FUNCTIONITEM cmd="function.textHide" delay="4000" />
+		</FUNCTION>
+		<FUNCTION id="textHide">
+			<FUNCTIONITEM cmd="animation.hide('lb1', 'fade', '', 300, '')" delay="0"/>
+			<FUNCTIONITEM cmd="animation.hide('lb2', 'fade', '', 300, '')" delay="300"/>
+			<FUNCTIONITEM cmd="animation.hide('lb3', 'fade', '', 300, '')" delay="600"/>
+			<FUNCTIONITEM cmd="function.albumShow" delay="1000" />
+		</FUNCTION>
+
+		<FUNCTION id="albumShow">
+			<FUNCTIONITEM cmd="animation.flyIn('cd1', 1000, 300, 450, 840, 'easeOut5', 1000, '')" delay="0"/>
+			<FUNCTIONITEM cmd="animation.flyIn('cd2', 900, 300, 450, 840, 'easeOut5', 1000, '')" delay="300"/>
+			<FUNCTIONITEM cmd="animation.flyIn('cd3', 800, 300, 450, 840, 'easeOut5', 1000, '')" delay="600"/>
+			<FUNCTIONITEM cmd="animation.flyIn('cd4', 700, 300, 450, 840, 'easeOut5', 1000, '')" delay="900"/>
+			<FUNCTIONITEM cmd="animation.flyIn('cd5', 600, 300, 450, 840, 'easeOut5', 1000, '')" delay="1200"/>
+			<FUNCTIONITEM cmd="function.albumHide" delay="8000"/>
+		</FUNCTION>
+		<FUNCTION id="albumHide">
+			<FUNCTIONITEM cmd="animation.flyOut('cd1', -600, 300, 450, 840, 'easeOut5', 1000, '')" delay="0"/>
+			<FUNCTIONITEM cmd="animation.flyOut('cd2', -700, 300, 450, 840, 'easeOut5', 1000, '')" delay="300"/>
+			<FUNCTIONITEM cmd="animation.flyOut('cd3', -800, 300, 450, 840, 'easeOut5', 1000, '')" delay="600"/>
+			<FUNCTIONITEM cmd="animation.flyOut('cd4', -900, 300, 450, 840, 'easeOut5', 1000, '')" delay="900"/>
+			<FUNCTIONITEM cmd="animation.flyOut('cd5', -1000, 300, 450, 840, 'easeOut5', 1000, '')" delay="1200"/>
+			<FUNCTIONITEM cmd="function.text" delay="2000"/>
+		</FUNCTION>
+
+		<FUNCTION id="replay">
+			<FUNCTIONITEM cmd="function.ship"/>
+		</FUNCTION>
+	</FUNCTIONLIST>
+	<UI>
+		<UILAYOUT portrait="720,200" landscape="720,200">
+			<WINDOW layout="0,0,720,200" onCreate="function.text" defaultImg="img/sky.png" >
+				<LABEL id="lb1" layout="150,20,500,120" text="New Albums of the Week" fontStyle="bold" fontSize="80" fontColor="#eeffcc" fontShadow="#809070" visible="invisible" />
+				<LABEL id="lb2" layout="220,100,500,50" text="Turn your CD collection" fontStyle="bold" fontSize="40" fontColor="#ffee00" fontShadow="#809070" visible="invisible" />
+				<LABEL id="lb3" layout="230,150,500,50" text="into an Amazon.com Gift card." fontStyle="bold" fontSize="40" fontColor="#eeaa99" fontShadow="#809070" visible="invisible" />
+				<IMAGE id="listener" layout="10,10,150,200"  defaultImg="img/listener.png" />
+				<IMAGE id="cd1" layout="150,-10,150,280"  defaultImg="img/image001r15.png" visible="invisible" />
+				<IMAGE id="cd2" layout="250,-10,150,280"  defaultImg="img/image006r15.png" visible="invisible" />
+				<IMAGE id="cd3" layout="350,-10,150,280"  defaultImg="img/image008r15.png" visible="invisible" />
+				<IMAGE id="cd4" layout="450,-10,150,280"  defaultImg="img/image012r15.png" visible="invisible" />
+				<IMAGE id="cd5" layout="550,-10,150,280"  defaultImg="img/image015r15.png" visible="invisible" />
+				<IMAGE id="logo" layout="640,0,80,40" defaultImg="img/amazonmp3.png" />
+			</WINDOW>
+			<WINDOW layout="0,0,720,200" onClick="document.open('../coverflow/coverflowPopup.xml', 'root._adPopup')" />
+		</UILAYOUT>
+	</UI>
+</MOML>

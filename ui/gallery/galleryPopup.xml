@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created by ApplusForm.com on 2013.8.6
+
+	Permission is granted to copy, distribute, modify under the terms of ApplusForm License.
+
+	Copyright (C) 2013 ApplusForm.com All rights reserved.
+-->
+<MOML version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+    
+    <THEMES id="themeMenu" >
+		<THEME id="thLabel1"  fontSize="12" textAlign="left|vCenter" fontColor="#ccccff" fontShadow="#333388"/>
+	</THEMES>
+   
+
+	<UI>
+		<UILAYOUT portrait="320,390" landscape="320,390" theme="themeMenu" >
+           <COVERFLOW id="gallery" layout="0,0,320,390"  defaultImg="#ffffff" shadow="mirror" dataSource="{userVariable.galleryData}" dataList="/DATA/ITEM" imagePath="@img" index="0" coverScale="90" onChange="function.coverflowChange(gallery.index)" onClick="function.coverflowClick">
+
+			</COVERFLOW>
+			<LABEL id="pname" themeId="thLabel1" layout="10,300,300,20" textAlign="center"/>
+			<LABEL id="price" themeId="thLabel1" layout="0,320,160,30" textAlign="right|vCenter"/>
+			<STYLEBUTTON themeId="thLabel1" layout="190,320,60,30" text="상세보기" onClick="function.coverflowClick" style="round" defaultImg="#60efca"/>
+        </UILAYOUT>
+    </UI>
+    <FUNCTIONCALL cmd="function.coverflowChange(0)" /> 
+    <FUNCTIONCALL cmd="userVariable.galleryVisible='true'" /> 
+    
+	<FUNCTIONLIST>
+		<FUNCTION id="coverflowChange(index)">
+			<FUNCTIONITEM cmd="userVariable.coverflowIndex = math.add(index,1)" />
+			<FUNCTIONITEM cmd="pname.text = xpath.evaluateEx(userVariable.galleryData, '/DATA/ITEM[' + userVariable.coverflowIndex + ']/@pname')"/>
+			<FUNCTIONITEM cmd="price.text = xpath.evaluateEx(userVariable.galleryData, '/DATA/ITEM[' + userVariable.coverflowIndex + ']/@price')"/>
+		</FUNCTION>
+		<FUNCTION id="coverflowClick">
+			<FUNCTIONITEM cmd="userVariable.coverflowIndex = math.add(gallery.index,1)" />
+			<FUNCTIONITEM cmd="userVariable.link = xpath.evaluateEx(userVariable.galleryData, '/DATA/ITEM[' + userVariable.coverflowIndex + ']/@link')"/>
+			<_FUNCTIONITEM cmd="device.log(userVariable.link)"/>
+			<FUNCTIONITEM cmd="function.root.main.navigation(userVariable.link)"/>
+			<FUNCTIONITEM cmd="container.visible='invisible'" />
+			<_FUNCTIONITEM cmd="container.close" delay="2000"/>
+		</FUNCTION>
+	</FUNCTIONLIST>
+</MOML>

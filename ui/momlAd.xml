@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Created by ApplusForm.com on 2013.12.31
+
+	Permission is granted to copy, distribute, modify under the terms of ApplusForm License.
+
+	Copyright (C) 2013 ApplusForm.com All rights reserved.
+-->
+<MOML version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+
+	<UI>
+		<UILAYOUT portrait="720,200" landscape="720,200" theme="themeMenu">
+			<CONTAINER id="adContainer" layout="0,0,720,200" src="ad/music/adBar.xml"/>
+		</UILAYOUT>
+	</UI>
+
+	<_FUNCTIONCALL cmd="adContainer.src ='ad/music/adBar.xml'" delay="200"/>
+
+</MOML>

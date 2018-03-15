@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IMAGELIST>
+	<ITEM src="img/image001.png" name="album1" title="Red" artist="Taylor Swift"/>
+	<ITEM src="img/image002.png" name="album2" title="good kid, m.A.A.d city" artist="Kendrick Lamar"/>
+	<ITEM src="img/image003.png" name="album3" title="Babel" artist="Mumford &amp; Sons"/>
+	<ITEM src="img/image004.png" name="album4" title="Viva Duets" artist="Tony Bennett"/>
+	<ITEM src="img/image005.png" name="album5" title="The Truth About Love" artist="P!nk"/>
+	<ITEM src="img/image006.png" name="album6" title="On This Winter's Night" artist="Lady Antebellum"/>
+	<ITEM src="img/image007.png" name="album7" title="Two Eleven" artist="Brandy"/>
+	<ITEM src="img/image008.png" name="album8" title="Tornado" artist="Little Big Town"/>
+	<ITEM src="img/image009.png" name="album9" title="21" artist="Adele"/>
+	<ITEM src="img/image010.png" name="album10" title="Overexposed" artist="Maroon 5"/>
+	<ITEM src="img/image011.png" name="album11" title="Until Now" artist="Swedish House Mafia"/>
+	<ITEM src="img/image012.png" name="album12" title="Christmas With Scotty McCreery" artist="Scotty McCreery"/>
+	<ITEM src="img/image013.png" name="album12" title="Kaleidoscope Dream" artist="Miguel"/>
+	<ITEM src="img/image014.png" name="album12" title="Apocryphon" artist="The Sword"/>
+	<ITEM src="img/image015.png" name="album12" title="Blown Away" artist="Carrie Underwood"/>
+</IMAGELIST>
+
+

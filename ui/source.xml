@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML version="1.0.0">
+
+	<FUNCTIONLIST>
+		<FUNCTION id="fileContent">
+			<FUNCTIONITEM cmd="userVariable.source=file.read(userVariable.sourceFilePath)"/>
+		</FUNCTION>
+	</FUNCTIONLIST>
+
+	<THEMES id="theme1">
+		<THEME id="titleBar" layout="0,0,300,22+userVariable.paddingTop" defaultImg="#e0f8fbff" textAlign="center" onClick="'ignore'"/> <!-- delete textAlign -->
+		<THEME id="titleBtns" layout="0,userVariable.paddingTop,300,22" align="linear:hJustify|vCenter|subCenter"/>
+		<THEME id="titlePadding" layout="0,22+userVariable.paddingTop"/>
+		<THEME id="codeLabel" margin="5,5,5,5" padding="5,5,5,5" layout="290,auto" multiLine="true" defaultImg="#B0C4DE" minFontSize="0" fontSize="6pt"/>
+		<THEME id="titleBackBtnImg" layout="auto,12" defaultImg="embed:/img/common/backArrow.png" margin="5,5,5,5"/>
+		<THEME id="titleBackBtnText" textColor="#007aff" text="Back"/>
+		<THEME id="titleText" layout="0,userVariable.paddingTop,300,22" textAlign="center" fontStyle="bold" textColor="#000000"/>
+		<THEME id="titleBottom" layout="0,22+userVariable.paddingTop-1px,300,1px" defaultImg="#80808080"/>
+		<THEME id="titleBack" defaultImg="#00000000" pressedImg="#30a0a0f0" align="linear:vCenter|subCenter" />
+
+	</THEMES>
+	<UI>
+		<UILAYOUT portrait="300,300" landscape="300,300" theme="theme1">
+			<POPUP layout="0,0,300,300" _showEffect="fade:400" hideEffect="fade:1000" defaultImg="#ffffff">
+				<WINDOW layout="0,0,300,300" align="linear:vertical" scrollBarVisible="true" scroll="vertical|horizontal">
+					<WINDOW themeId="titlePadding"/>
+					<LABEL layout="300,auto" textColor="#000000" fontStyle="bold" multiLine="true" text="* {userVariable.sourceFilePath} :"/>
+					<EDIT id="source" themeId="codeLabel" layout="auto,auto" multiLine="true" text="loading source..."/>
+				</WINDOW>
+				<WINDOW themeId="titleBar">
+					<LABEL themeId="titleText" text="Source Code"/>
+					<WINDOW themeId="titleBtns">
+						<BUTTON themeId="titleBack" onClick="document.close()">
+							<IMAGE themeId="titleBackBtnImg"/>
+							<LABEL themeId="titleBackBtnText"/>
+						</BUTTON>
+					</WINDOW>
+				</WINDOW>
+				<WINDOW themeId="titleBottom"/>
+			</POPUP>
+		</UILAYOUT>
+	</UI>
+	<_FUNCTIONCALL cmd="device.systemPopup('', string.len(source.text), 'ok', '', '')" />
+	<FUNCTIONCALL cmd="source.text=userVariable.source" delay="100"/>
+</MOML>

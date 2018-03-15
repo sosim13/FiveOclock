@@ -1,0 +1,82 @@
+﻿
+<script language="javascript">
+function hideElement(id)
+{
+	var element = document.getElementById(id);
+
+	if (element)
+  		element.style.display='none';
+}
+
+function css(selector, property, value) {
+    for (var i=0; i<document.styleSheets.length;i++) {//Loop through all styles
+        //Try add rule
+        try { document.styleSheets[i].insertRule(selector+ ' {'+property+':'+value+'}', document.styleSheets[i].cssRules.length);
+        } catch(err) {try { document.styleSheets[i].addRule(selector, property+':'+value);} catch(err) {}}//IE
+    }
+}
+function isClass(element, className)
+{
+	
+}
+
+
+
+function isMainPage()
+{
+	if (window.location.pathname == "/m/")
+		return true;
+	if (window.location.pathname == "/m/main.html")
+		return true;
+		
+	return false;
+}
+
+if (isMainPage()) {
+
+// insert menu button
+	//css('#searchSection', 'padding-left', '58px'); // 메뉴 버튼을 넣기 위해 왼쪽 여백 추가
+	var searchSection=document.getElementById("searchSection");
+	searchSection.style.paddingLeft='58px';
+	
+  	var keywordElement=document.getElementById("keyword");
+  	var spanNode = keywordElement.parentNode;
+  	var parent = spanNode.parentNode
+  	var newNode = document.createElement("button");
+  	newNode.setAttribute("class", "btn-submit");
+  	newNode.style.left="0";
+  	newNode.style.right="";
+  	newNode.style.background="#8485cc";
+  	
+  	newNode.innerHTML= "메뉴";
+  	newNode.setAttribute("onclick", "agate.runScript('function.root.main.slide')");
+  	//spanNode.insertBefore(newNode, keywordElement);
+  	parent.insertBefore(newNode, spanNode);
+
+    window.setTimeout("enlargeImage()", 100);
+    window.setTimeout("enlargeImage()", 300);
+    window.setTimeout("enlargeImage()", 500);
+    window.setTimeout("enlargeImage()", 1000);
+}
+
+// enlarge image
+function enlargeImage()
+{
+  	var imgs=document.getElementsByTagName("img");
+	for (i = 0; i < imgs.length; ++i) {
+  		var img = imgs[i];
+  		
+  		img.style.width = "115px";
+  		img.style.height = "115px";
+  	}
+}  
+
+
+hideElement('header');
+hideElement('footer');
+
+//agate_beep.playBeep();
+//alert('script end');
+
+  
+</script>
