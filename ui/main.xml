@@ -9,13 +9,6 @@
 <MOML version="1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
 
 	<THEMES id="themeMenu">
-		<THEME id="thLeftButton" layout="120,25" defaultImg="#00000000" pressedImg="#20808080" fontSize="11" textAlign="left" padding="15,0,0,0" overlay1="color:#30808080|shape=polygon(3,97,100,98,3,100)"/>
-		<THEME id="smallTitle" layout="120,30" fontSize="9" fontFace="/res/QumpellkaNo12.otf" textAlign="left|bottom" fontColor="#9CA4B3" padding="5,0,0,2"/>
-		<THEME id="titleBarBtn" shape="roundRect(2)" borderStyle="solid:1|#80a0a0a0" defaultImg="#00000000" padding="0,0,0,0" fontSize="13" fontFace="/res/EunjinNakseo.ttf|/res/UnPilgiBold.ttf" overlay1="gradation:tb|#30ffffff|#00000000" _overlay1="gradation:tb|#30ffffff|#80ffffff|#80808080" fontColor="#505050"/>
-		<THEME id="thLabel1" layout="18,18" margin="5,8,5,8"/>
-		<THEME id="thLabel2" layout="110,30" fontSize="12" textAlign="left|vCenter" fontColor="#000000" margin="0,2,0,0"/>
-		<THEME id="toolBtn" layout="50,40" align="relative" shape="roundRect(2)" borderStyle="solid:1|#80ffffff" defaultImg="#00000000" padding="0,0,0,0" fontSize="20" overlay1="gradation:tb|#80ffffff|#a0a0a0a0|#ff808080" fontColor="#ffffff"/>
-		<THEME id="toolText" layout="0,30,parent.width,10" fontSize="10" fontFace="/res/UnPilgiBold.ttf" textAlign="center" fontColor="#ffffff" fontShadow="#80808080"/>
 	</THEMES>
 
 
