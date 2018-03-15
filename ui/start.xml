@@ -7,7 +7,7 @@
 	<UI>
 		<UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
 			<!-- Main Container -->
-			<CONTAINER id="main" layout="0,0,320,460" src="webView.xml" />
+			<CONTAINER id="main" layout="0,0,320,460" src="main.xml" />
 						
 			<!-- Splash Screen -->
 			<WINDOW id="splashScreen" layout="0,0,320,460"  defaultImg="#ffffff" >
