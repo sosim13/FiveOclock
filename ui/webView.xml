@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MOML>
+    <THEMES id="theme1">
+        <THEME id="title" fontSize="50" textColor="#000000" fontShadow="#80808080"/>
+        <THEME id="loading" fontSize="12" textColor="#000000" fontShadow="#80808080"/>
+    </THEMES>
+
+    <UI>
+        <UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
+            <WINDOW id="bg" layout="0,0,320,460">
+                <WINDOW id="slideBg" layout="0,0,640,460" defaultImg="bg1.jpg" />
+                <WINDOW id="fadeBg" layout="0,0,640,460" visible='invisible'/>
+                <WINDOW layout="0,0,320,460" defaultImg="#b0ffffff" />
+            </WINDOW>
+
+            <AGATEWEBVIEW id="webView" layout="0,30,320,390" src="http://sosim13p.cafe24.com/cloudinary/index.jsp" _src="main.htm" supportZoom="false" controls="none" defaultImg="#01ffffff" jsBridge="false">
+                <LINKMAP>
+                    <!-- main page url을 모두 써준다.-->
+                    <LINK url="http://sosim13p.cafe24.com/cloudinary/index.jsp*" jsPlugin="js/main.js" delay="500"/>
+
+                    <!-- 공통 -->
+                    <!-- <LINK url="http://nikemania.com/*" jsPlugin="js/common.js" delay="500"/> -->
+					
+                    <!-- 자동로그인 -->
+                    <!-- <LINK url="http://nikemania.com/m/m.php" jsPlugin="js/fillOrderInfo.js" delay="500"/> -->
+                    <!-- <LINK url="http://nikemania.com/m/m.php" onFinish="function.fillOrderInfo" delay="1000"/> -->
+                </LINKMAP>
+            </AGATEWEBVIEW>
+        </UILAYOUT>
+    </UI>
+
+    <FUNCTIONLIST>
+        <!-- 첫 웹페이지에서 갤러리 데이터 만들기 안씀-->
+        <FUNCTION id="makeGalleryData(url)" >
+            <FUNCTIONITEM condition="userVariable.galleryData == ''" cmd="caller.runJavaScript(file.read('gallery/makeImageData.js'))" />
+        </FUNCTION>
+    </FUNCTIONLIST>
+
+</MOML>

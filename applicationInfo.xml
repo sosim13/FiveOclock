@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Created by MoSPI.org on 06.08.2012
+
+	Permission is granted to copy, distribute, modify under the terms of Citrine License.
+
+	Copyright (C) MoSPI.org. All rights reserved.
+-->
+<MOML>
+    <APPLICATIONINFO>
+        <START url="ui/start.xml" />
+    </APPLICATIONINFO>
+</MOML>
