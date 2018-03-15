@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MOML>
-    <THEMES id="theme1">
-        <THEME id="title" fontSize="50" textColor="#000000" fontShadow="#80808080"/>
-        <THEME id="loading" fontSize="12" textColor="#000000" fontShadow="#80808080"/>
-    </THEMES>
-    <UI>
-        <UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
-            <!-- Main Container -->
-            <CONTAINER id="main" layout="0,0,320,460" src="webView.xml" />
-
-            <!-- Splash Screen -->
-            <WINDOW id="splashScreen" layout="0,0,320,460"  defaultImg="#ffffff" >
-                <WINDOW layout="0,0,320,200" align="linear:center" >
-                    <LABEL id="title" themeId="title" layout="auto,auto" text="5OClock"  visible="invisible"/>
-                </WINDOW>
-                <WINDOW layout="0,320,320,100" align="linear:center" >
-                    <LABEL id="loading" themeId="loading" layout="auto,auto" text="loading..."  visible="invisible"/>
-                </WINDOW>
-            </WINDOW>
-
-        </UILAYOUT>
-    </UI>
-    <FUNCTIONCALL cmd="animation.flyIn('title', 320, 0, title.width, title.height, 'easyOut3', 1000, '')" delay="500" />
-    <FUNCTIONCALL cmd="animation.show('loading', 'fade', 'roundTrip2', 2000, '')" delay="2000" />
-    <FUNCTIONCALL cmd="animation.hide('splashScreen', 'fade', 'easyOut3', 1000, '')" delay="5000" />
+	<THEMES id="theme1">
+		<THEME id="title" fontSize="50" textColor="#000000" fontShadow="#80808080"/>
+		<THEME id="loading" fontSize="12" textColor="#000000" fontShadow="#80808080"/>
+	</THEMES>
+	<UI>
+		<UILAYOUT portrait="320,460" landscape="320,460" theme="theme1">
+			<!-- Main Container -->
+			<CONTAINER id="main" layout="0,0,320,460" src="webView.xml" />
+						
+			<!-- Splash Screen -->
+			<WINDOW id="splashScreen" layout="0,0,320,460"  defaultImg="#ffffff" >
+				<WINDOW layout="0,0,320,200" align="linear:center" >
+					<LABEL id="title" themeId="title" layout="auto,auto" text="mulawear"  visible="invisible"/>
+				</WINDOW>
+				<WINDOW layout="0,320,320,100" align="linear:center" >
+					<LABEL id="loading" themeId="loading" layout="auto,auto" text="loading..."  visible="invisible"/>
+				</WINDOW>
+			</WINDOW>
+			
+		</UILAYOUT>
+	</UI>
+	<FUNCTIONCALL cmd="animation.flyIn('title', 320, 0, title.width, title.height, 'easyOut3', 1000, '')" delay="500" /> 
+	<FUNCTIONCALL cmd="animation.show('loading', 'fade', 'roundTrip2', 2000, '')" delay="2000" />
+	<FUNCTIONCALL cmd="animation.hide('splashScreen', 'fade', 'easyOut3', 1000, '')" delay="5000" />
 
 </MOML>
