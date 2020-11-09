@@ -13,13 +13,13 @@
 				<WINDOW layout="0,0,320,460" defaultImg="#b0ffffff" />
 			</WINDOW>
 			
-			<AGATEWEBVIEW id="webView" layout="0,0,320,460" src="http://bnbd.co.kr/cloudinary/index.jsp" _src="main.htm" supportZoom="false" controls="none" defaultImg="#01ffffff"  jsBridge="false">
+			<AGATEWEBVIEW id="webView" layout="0,0,320,460" src="http://sosim13p.cafe24.com/cloudinary/index.jsp" _src="main.htm" supportZoom="false" controls="none" defaultImg="#01ffffff"  jsBridge="false">
 				<LINKMAP>
 					<!-- main page url을 모두 써준다.-->
-					<LINK url="http://bnbd.co.kr/cloudinary/index.jsp" jsPlugin="js/main.js" delay="500"/>
+					<LINK url="http://sosim13p.cafe24.com/cloudinary/index.jsp" jsPlugin="js/main.js" delay="500"/>
 					
 					<!-- 공통 -->
-					<LINK url="http://bnbd.co.kr/cloudinary/index.jsp*" jsPlugin="js/common.js" delay="500"/>
+					<LINK url="http://sosim13p.cafe24.com/cloudinary/index.jsp*" jsPlugin="js/common.js" delay="500"/>
 				</LINKMAP>
 			</AGATEWEBVIEW>
 			
